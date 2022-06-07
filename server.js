@@ -3,16 +3,14 @@ const app = express()
 const mongoose = require('mongoose')
 const User = require("./models/Users")
 
-const dbname = "Cost-Manager"
-const mongoDB = `mongodb+srv://davidrimon:davidrimon@cluster0.q9y9f.mongodb.net/${dbname}?retryWrites=true&w=majority`;
-mongoose.connect(mongoDB,{useNewIrlParser: true, useFindAndModify: false, useUnifiedTopology: true});
+const mongoDB = `mongodb+srv://davidrimon:davidrimon@cluster0.q9y9f.mongodb.net/Cost-Manager?retryWrites=true&w=majority`;
+mongoose.connect(mongoDB);
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));
 db.once("open", function () {
   console.log("Connected successfully");
 });
-
 
 app.set("view engine","ejs")
 app.use(logger)
