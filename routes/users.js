@@ -1,18 +1,27 @@
-
 const express = require('express')
 const { route } = require('express/lib/application')
 const router = express.Router()
+const userModel = require('../models/Users')
 
 router.get("/", (req, res) => {
     res.send("User list")
 })
 
-router.post("/",(req, res) => {
-    res.send('Create User')
+router.post("/", async (req, res) => {
+    //res.send('Create User')
+    const user = new userModel(req.body);
+  
+    try {
+      await user.save();
+      res.send(user);
+    } catch (error) {
+      res.status(500).send(error);
+    }
 })
 
 router.get("/new", (req, res) => {
     res.send("User New Form")
+
 })
 
 router
