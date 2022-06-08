@@ -4,7 +4,7 @@ const express = require("express")
 const { path } = require('express/lib/application')
 const app = express()
 const mongoose = require('mongoose')
-const User = require("./models/Users")
+const User = require("./models/User")
 
 mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true});
 
@@ -22,7 +22,6 @@ app.get("/", logger, (req, res)=>{
 })
 
 const userRouter = require("./routes/users")
-
 app.use("/users", userRouter)
 
 function logger(req, res, next) {
