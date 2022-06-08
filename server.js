@@ -1,10 +1,12 @@
+require('dotenv').config()
+
 const express = require("express")
+const { path } = require('express/lib/application')
 const app = express()
 const mongoose = require('mongoose')
 const User = require("./models/Users")
 
-const mongoDB = `mongodb+srv://davidrimon:davidrimon@cluster0.q9y9f.mongodb.net/Cost-Manager?retryWrites=true&w=majority`;
-mongoose.connect(mongoDB);
+mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true});
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));
@@ -15,7 +17,7 @@ db.once("open", function () {
 app.set("view engine","ejs")
 app.use(logger)
 
-app.get("/", logger,(req, res)=>{
+app.get("/", logger, (req, res)=>{
     res.render("index", {text: "world"})
 })
 
@@ -28,11 +30,11 @@ function logger(req, res, next) {
     next()
 }
 app.listen(3000, () => {
-    console.log("Server is running ar port 3000");
+    console.log("Server is running at port 3000");
 })
 
 
-run()
+/*run()
 async function run() {
     try {
         const user = await User.create({
@@ -49,4 +51,4 @@ async function run() {
     } catch (e) {
         console.log(e.message)
     }
-}
+}*/
