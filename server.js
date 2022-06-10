@@ -5,6 +5,8 @@ const { path } = require('express/lib/application')
 const app = express()
 const mongoose = require('mongoose')
 const User = require("./models/User")
+const bodyParser = require('body-parser');
+
 
 mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true});
 
@@ -20,6 +22,10 @@ app.use(logger)
 app.get("/", logger, (req, res)=>{
     res.render("index", {text: "world"})
 })
+
+app.use(express.urlencoded({ extended: true}))
+app.use(bodyParser.json());
+
 
 const userRouter = require("./routes/users")
 app.use("/users", userRouter)

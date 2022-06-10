@@ -2,10 +2,8 @@ const express = require('express')
 const { route } = require('express/lib/application')
 const router = express.Router()
 const userModel = require('../models/User')
-const bodyParser = require('body-parser');
 
 router.get("/", async (req, res) => {
-    //res.send("User list")
     var users = await userModel.find({});
 
     try {
@@ -15,12 +13,7 @@ router.get("/", async (req, res) => {
     }
 })
 
-router.use(bodyParser.urlencoded({ extended: false }));
-router.use(bodyParser.json());
-
 router.post("/", async (req, res) => {
-    //res.send('Create User')
-    //var reqBody = JSON.stringify(req.body);
     const user = new userModel({
       first_name: req.body.first_name,
       last_name: req.body.last_name,
@@ -50,15 +43,8 @@ router
   .route("/:id")
   .get( getUser, (req, res) => {
     res.json(res.user)
-    /*var user = await userModel.findOne({"_id":req.params.id});
-    try {
-      res.send(user);
-    } catch (error) {
-      res.status(500).send(error);
-    }*/
   })
   .put( getUser, async (req, res) => {
-    //res.send(`Update User With ID ${req.params.id}`)
     if (req.body.first_name != null) {
       res.user.first_name = req.body.first_name
     }
@@ -82,7 +68,6 @@ router
     }
   })
   .delete( getUser, async (req, res) => {
-    //res.send(`Delete User With ID ${req.params.id}`)
     try {
       await res.user.remove()
       res.json({ message: 'Deleted User'})
