@@ -2,3 +2,7 @@ npm install --dotenv-extended
 env file
 npm install mongoose
 npm install -g nodemon
+
+After cloning the repo: 
+1. You should install "dotenv" with the next command: "npm install --dotenv-extended"
+2. Ctreate a .env file and paste init your mongodb url. Our is: "DATABASE_URL=mongodb+srv://davidrimon:davidrimon@cluster0.q9y9f.mongodb.net/Cost-Manager?retryWrites=true&w=majority"
