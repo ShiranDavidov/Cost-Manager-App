@@ -1,3 +1,4 @@
 npm install --dotenv-extended
 env file
 npm install mongoose
+npm install -g nodemon
