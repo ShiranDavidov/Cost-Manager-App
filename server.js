@@ -30,6 +30,9 @@ app.use(bodyParser.json());
 const userRouter = require("./routes/users")
 app.use("/users", userRouter)
 
+const costRouter = require("./routes/costs")
+app.use("/costs", costRouter)
+
 function logger(req, res, next) {
     console.log(req.originalUrl)
     next()

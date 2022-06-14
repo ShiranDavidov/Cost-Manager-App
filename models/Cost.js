@@ -1,12 +1,10 @@
 const mongoose = require("mongoose")
 
 const costSchema = mongoose.Schema({
-    first_name: String,
-    last_name: String,
+    userId: Number,
     category: String,
-    description: String,
     sum: Number,
-    currency: String,
+    description: String,
     date: Date
 })
 
