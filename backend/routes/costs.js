@@ -68,7 +68,7 @@ router.post("/", async (req, res) => {
 router.get("/monthly", async (req, res) => {
   let montlyCost
   try{
-    montlyCost = await monthCostModel.find({"month": req.body.month, "year": req.body.year})
+    montlyCost = await monthCostModel.find({"userId": req.body.userId, "month": req.body.month, "year": req.body.year})
     if (montlyCost == null) {
       console.log('montlyCost == null1')
       return res.status(404).json({ message: 'Cannot find this monthly cost'})

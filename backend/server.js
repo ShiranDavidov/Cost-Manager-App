@@ -41,21 +41,3 @@ app.listen(3000, () => {
     console.log("Server is running at port 3000");
 })
 
-/*run()
-async function run() {
-    try {
-        const user = await User.create({
-            first_name: "Kyle",
-            last_name: "Koko",
-            birthday: Date.now(),
-            marital_status: "married",
-            occupation: {
-                comapny: "Crossix",
-                role: "NOC"
-            }
-        })
-        console.log(user)
-    } catch (e) {
-        console.log(e.message)
-    }
-}*/
