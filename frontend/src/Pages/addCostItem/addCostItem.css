@@ -1,0 +1,97 @@
+  body {
+    text-align: center;
+    font-family: "Century Gothic";
+    align-items: center;
+    }
+    .center{
+      text-align: center;
+      align-self: center;
+    }
+    
+    .add-client-form-main {
+      font-family: "Century Gothic";
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      overflow: hidden;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem;
+      flex-direction: column;
+      border-radius: 30px;
+      box-shadow: 0 0 2em #e6e9f9;
+      gap: 2em;
+    }
+    tr, td {
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    tr:hover {
+      background-color:rgb(113,163,134);
+    }
+
+    .add-client-form-main .add-client-title {
+      text-align: center;
+      padding: 0.5em;
+      font-family: "Century Gothic";
+      border-radius: 15px;
+      margin-top: 1.5em;
+    }
+    .select{
+      background: rgb(81,117,106);
+      padding:0.3rem 0.4rem;
+      border-radius: 30px;
+      font-size: 17px;
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+
+    .add-client-form-main .add-client-form-group {
+      background: white;
+      box-shadow: 0 0 2em #e6e9f9;
+      padding: 1em;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      width:250px;
+      border-radius: 20px; /*rounding corners border*/
+      color: #4d4d4d;
+      margin-top: -2em;
+    }
+    
+    .add-client-form-main .add-client-form-group input {
+      font-size: 17px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      outline: none;
+      padding-top: 1rem;
+      padding:5px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 1rem;
+      background-color: rgb(242,247,245);
+      border-bottom: 1px solid grey;
+      transition: all 100ms ease-in-out;
+    }
+    
+    .add-client-form-main .add-client-form-group input:focus{
+      border-bottom: 2px solid rgb(194,202,194);
+    }
+    
+    .add-client-form-main .add-client-form-group input::placeholder {
+      color: black;
+      font-size: 0.9em;
+    }
+    
+    .add-client-form-main .submit {
+      padding: 1em;
+      background: rgb(242,247,245);
+      color: black;
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+    }
