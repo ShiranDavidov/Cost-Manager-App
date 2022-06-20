@@ -36,17 +36,18 @@
 
     .add-client-form-main .add-client-title {
       text-align: center;
-      padding: 0.5em;
+      padding: 0.1em;
       font-family: "Century Gothic";
+      font-size:50px ;
       border-radius: 15px;
-      margin-top: 1.5em;
+      margin-top: 7rem;
     }
     .select{
       background: rgb(81,117,106);
       padding:0.3rem 0.4rem;
       border-radius: 30px;
-      font-size: 17px;
-      margin-top: 8px;
+      font-size:20px;
+      margin-top: 9px;
       margin-bottom: 8px;
     }
 
@@ -58,20 +59,20 @@
       flex-wrap: wrap;
       flex-direction: row;
       width:250px;
-      border-radius: 20px; /*rounding corners border*/
+      border-radius: 25px; /*rounding corners border*/
       color: #4d4d4d;
-      margin-top: -2em;
+      margin-top: 1em;
     }
     
     .add-client-form-main .add-client-form-group input {
       font-size: 17px;
-      margin-top: 10px;
-      margin-bottom: 20px;
+      margin-top: 12px;
+      margin-bottom: 15px;
       outline: none;
-      padding-top: 1rem;
-      padding:5px;
+      padding-top: 2rem;
+      padding:7px;
       border: none;
-      border-radius: 5px;
+      border-radius: 10px;
       margin-top: 1rem;
       background-color: rgb(242,247,245);
       border-bottom: 1px solid grey;
@@ -93,5 +94,5 @@
       color: black;
       border: none;
       border-radius: 30px;
-      font-weight: 600;
+      font-weight: 500;
     }
