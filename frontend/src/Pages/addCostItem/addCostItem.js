@@ -19,13 +19,13 @@ async function uploadNewCostAPI(NewCost) {
   });
 }
 function AddCostItem() {
-  const [inputList, setInputList] = useState([{ sum: "", category: "", userid:"" ,description: "" }]);
+  const [inputList, setInputList] = useState([{ sum: "", category: "", userId:"" ,description: "" }]);
 
   const [text, setText] = useState();
   
   const[itemSum,setItemSum]= useState();
   const[category,setCategory]= useState();
-  const[userid,setuUserId]= useState();
+  const[userId,setuUserId]= useState();
   const[description,setDescription]= useState();
   
 const handleChangeItemSum = async (event) => {
@@ -51,14 +51,14 @@ const handleChangeItemSum = async (event) => {
     var NewCost = {
         sum : itemSum,
         category: category,
-        userid: userid,
+        userId: userId,
         description: description,
     }
 
     const response = await uploadNewCostAPI(NewCost);
     if (response){
         setText("the new cost added successfuly!")
-        setInputList([{ sum: "", category: "", userid:"" ,description: "" }]);
+        setInputList([{ sum: "", category: "", userId:"" ,description: "" }]);
         setItemSum("");
         setCategory("");
         setuUserId("");
@@ -70,7 +70,7 @@ const handleChangeItemSum = async (event) => {
         setCategory("");
         setuUserId("");
         setDescription("");
-        setInputList([{ sum: "", category: "", userid:"" ,description: "" }]);
+        setInputList([{ sum: "", category: "", userId:"" ,description: "" }]);
     }
   }
   const handleInputChange = (e, index) => {
@@ -86,7 +86,7 @@ const handleChangeItemSum = async (event) => {
     setInputList(list);
   };
   const handleAddClick = () => {
-    setInputList([...inputList, { sum: "", category: "", userid:"" ,description: "" }]);
+    setInputList([...inputList, { sum: "", category: "", userId:"" ,description: "" }]);
   };
 
   return (
@@ -130,7 +130,7 @@ const handleChangeItemSum = async (event) => {
           <Form.Control
             className="input"
             type="text"
-            value={userid}
+            value={userId}
             onChange={handleChangeUserId}
             placeholder="Enter your user ID"
           required />
