@@ -1,10 +1,10 @@
 require('dotenv').config()
 
 const express = require("express")
-const { path } = require('express/lib/application')
+//const { path } = require('express/lib/application')
 const app = express()
 const mongoose = require('mongoose')
-const User = require("./models/User")
+//const User = require("./models/User")
 const bodyParser = require('body-parser');
 
 
@@ -16,13 +16,13 @@ db.once("open", function () {
   console.log("Connected successfully");
 });
 
-app.set("view engine","ejs")
+/*app.set("view engine","ejs")
 app.use(logger)
 
 app.get("/", logger, (req, res)=>{
     res.render("index", {text: "world"})
 })
-
+*/
 app.use(express.urlencoded({ extended: true}))
 app.use(bodyParser.json());
 
