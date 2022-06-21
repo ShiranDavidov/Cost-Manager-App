@@ -27,7 +27,7 @@ router.post("/", async (req, res) => {
     })
     try {
       userIdCost = req.body.userId
-      sumCost = req.body.sum
+      sumCost = Number(req.body.sum)
       categoryCost = req.body.category
 
       //
@@ -49,9 +49,11 @@ router.post("/", async (req, res) => {
           year: yearCost,
           sum: sumCost
         })
+
+        console.log('no costs from that month')
       } else {
         editMonthCost.sum = editMonthCost.sum + sumCost;
-        console.log("need to raise the sum")
+        console.log('cost added to the montly costs')
       }
       const newMonthCost = await editMonthCost.save()
       const newCost = await cost.save()
@@ -68,7 +70,7 @@ router.post("/", async (req, res) => {
 router.get("/monthly", async (req, res) => {
   let montlyCost
   try{
-    montlyCost = await monthCostModel.find({"userId": req.body.userId, "month": req.body.month, "year": req.body.year})
+    montlyCost = await monthCostModel.find({"userId": req.query.userId, "month": req.query.month, "year": req.query.year})
     if (montlyCost == null) {
       console.log('montlyCost == null1')
       return res.status(404).json({ message: 'Cannot find this monthly cost'})

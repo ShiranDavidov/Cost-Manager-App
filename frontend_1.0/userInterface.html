@@ -8,11 +8,26 @@
 </head>
 <body>
     <h1>Cost Manager System</h1>
-    <form action="https://localhost:3000/costs" method="get">
-        height <input type="text" name="height" required><br>
-        width <input type="text" name="width" required><br>
-        <input type="submit" value="calculate">
+
+    <h2>Add new cost</h2>
+    <form action="http://localhost:3000/costs" method="post">
+        UserID <input type="number" name="userId" required><br>
+        Category <input type="text" name="category" required><br>
+        Sum <input type="number" name="sum" required><br>
+        Description <input type="text" name="description" required><br>
+        Date <input type="datetime" name="date" required><br>
+        <input type="submit" value="addCost">
       </form>
+      <br>
+      <br>
+      <h2>Get monthly costs report</h2>
+    <form action="http://localhost:3000/costs/monthly" method="get">
+        UserID <input type="number" name="userId" required><br>
+        Category <input type="text" name="category" required><br>
+        Month <input type="text" name="month" required><br>
+        Year <input type="text" name="year" required><br>
+        <input type="submit" value="find report">
+    </form>
     
 </body>
 </html>
