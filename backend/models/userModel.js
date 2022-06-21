@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
 const occupationSchema = new mongoose.Schema({
   company: String,
@@ -13,4 +13,4 @@ const userSchema = new mongoose.Schema({
   occupation: occupationSchema
 })
 
-module.exports = mongoose.model("Users", userSchema)
+module.exports = mongoose.model("Users", userSchema);

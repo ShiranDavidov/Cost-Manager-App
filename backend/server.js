@@ -1,12 +1,11 @@
-require('dotenv').config()
+require('dotenv').config();
 
-const express = require("express")
-//const { path } = require('express/lib/application')
-const app = express()
-const mongoose = require('mongoose')
-//const User = require("./models/User")
+const express = require("express");
+//const { path } = require('express/lib/application');
+const app = express();
+const mongoose = require('mongoose');
+//const User = require("./models/userModel");
 const bodyParser = require('body-parser');
-
 
 mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true});
 
@@ -23,21 +22,21 @@ app.get("/", logger, (req, res)=>{
     res.render("index", {text: "world"})
 })
 */
-app.use(express.urlencoded({ extended: true}))
+app.use(express.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 
 
-const userRouter = require("./routes/users")
-app.use("/users", userRouter)
+const userRouter = require("./routes/users");
+app.use("/users", userRouter);
 
-const costRouter = require("./routes/costs")
-app.use("/costs", costRouter)
+const costRouter = require("./routes/costs");
+app.use("/costs", costRouter);
 
-function logger(req, res, next) {
+/*function logger(req, res, next) {
     console.log(req.originalUrl)
-    next()
-}
+    next();
+}*/
 app.listen(3000, () => {
     console.log("Server is running at port 3000");
-})
+});
 
