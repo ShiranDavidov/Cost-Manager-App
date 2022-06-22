@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 
 const monthCostSchema = mongoose.Schema({
-    userId: Number,
+    userId: String,
     category: String,
     month: String,
     year: String,
